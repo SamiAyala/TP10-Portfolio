@@ -1,5 +1,6 @@
 import "./Layout.css";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import Footer from './Footer';
 
 const Layout = () => {
   return (
@@ -14,14 +15,12 @@ const Layout = () => {
             <li>
               <NavLink to="/misCreaciones">Mis Creaciones</NavLink>
             </li>
-            <li>
-              <NavLink to="/contacto">Contacto</NavLink>
-            </li>
           </ul>
         </div>
         </div>
       </nav>
       <Outlet />
+      <Footer />
     </>
   );
 };

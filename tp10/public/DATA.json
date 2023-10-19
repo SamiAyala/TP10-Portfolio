@@ -1,0 +1,73 @@
+{"proyectos": [
+	{
+		"titulo":"AAF" ,
+		"descripcion":"Plataforma de capacitación para la Asociacion Argentina de Fiscales. Realizado en React, Node y MS SQL Server.",
+		"imagenes":"https://static.wixstatic.com/media/b793be_0d962275adf346eba296e7806b50674c~mv2.jpg",
+		"fecha":"26/6/23",
+		"url":"https: //github.com/SamiAyala/AAF"
+	},
+	{
+		"titulo":"Productos v2" ,
+		"descripcion":"Página de compra de productos, con una api. Realizado en React.",
+		"imagenes":"https: //ar.jumpseller.com/generated/images/learn/los-10-productos-mas-vendidos-en-mexico/online-shopping-mexico-800-3423d44e0.png",
+		"fecha":"13/7/23",
+		"url":"https: //github.com/SamiAyala/TP07-Productos_V2"
+	},
+	{
+		"titulo":"Banderas" ,
+		"descripcion":"juego de adivinanza de banderas de paises. Realizado en React.",
+		"imagenes":"https: //cdn0.geoenciclopedia.com/es/posts/6/7/4/banderas_de_los_paises_del_mundo_476_orig.jpg",
+		"fecha":"30/7/23",
+		"url":"https: //github.com/SamiAyala/EFSI_TP-6-Banderas_Kaliszczak_Ayala"
+	},
+	{
+		"titulo":"Chanonical" ,
+		"descripcion":"Sitio web anónimo de tipo tablón de imágenes. Realizado en MVC (C#).",
+		"imagenes":"https: //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/4chan_Boards.png/300px-4chan_Boards.png",
+		"fecha":"1/12/22",
+		"url":"https: //github.com/SamiAyala/TP9-Final-Integrador"
+	},	
+	{
+		"titulo":"Quién Quiere ser Millonario" ,
+		"descripcion":"Sitio web para jugar a 'Quien Quiere Ser Millonario'. Realizado en MVC (C#).",
+		"imagenes":"https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN7kbFfXZzQAigmIndz6tzmsoO2ITW3z4zpg&usqp=CAU",
+		"fecha":"6/10/22",
+		"url":"https: //github.com/SamiAyala/TP7.QuienQuiereSerMillonario"
+	},
+	{
+		"titulo":"Sitio de Series",
+		"descripcion":"Sitio web para ver un listado de series. Realizado en MVC (C#).",
+		"imagenes":"https: //resizer.glanacion.com/resizer/v2/el-sitio-de-justwatch-tambien-hay-TDIMRLT7XNDDNADBJR2353QJGY.jpg?auth=d27e7370becdbabdc603e7b9280cb38ea31fdd573e6340ec34d2a974c9b67903&width=880&height=586&quality=70&smart=false&focal=736,620",
+		"fecha":"18/9/22",
+		"url":"https: //github.com/SamiAyala/TP8.-Mi-sitio-de-Series"
+	},
+	{
+		"titulo":"Sitio de Citas de Veterinario" ,
+		"descripcion":"Sitio web para ver y agregar citas de turno en una veterinaria. Realizado en React.",
+		"imagenes":"https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwlnZYJCdeqLrb3ugKQ1C0hA0cZ8xSsB8JrQ&usqp=CAU",
+		"fecha":"1/6/23",
+		"url":"https: //github.com/SamiAyala/EFSI-TP5_Citas_P2"
+	},
+	{
+		"titulo":"Sitio de Pizzas" ,
+		"descripcion":"Sitio web para ver un listado de tipos de Pizza. Donde se pueden agregar y eliminar tipos. Realizado con Node.js, Javascript y MS SQL Server.",
+		"imagenes":"https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpYe1RvxI8xYxGCzIJfX0Pri0l3L82MearqQ&usqp=CAU",
+		"fecha":"5/5/23",
+		"url":"https: //github.com/SamiAyala/DAI-TP03_PizzasNode"
+	},
+	{
+		"titulo":"Sitio de ToDo" ,
+		"descripcion":"Sitio web para gestionar una lista de ToDo. Realizado en Javascript.",
+		"imagenes":"https: //encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQOnzhLTcSezxj4RVG6m54pCNOsB671HHIPA&usqp=CAU",
+		"fecha":"7/4/23",
+		"url":"https: //github.com/SamiAyala/EFSI---TP02_ToDoList"
+	},
+	{
+		"titulo":"Sitio de Compras con carrito" ,
+		"descripcion":"Sitio web de compra de productos bajados de una api, incluye un carrito de compras. Realizado en React.",
+		"imagenes":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ntvAPWoqaoSGXdq62xbkw8203bJ19OJUcQ&usqp=CAU",
+		"fecha":"19/10/23",
+		"url":"https://github.com/FrancardoKaliZ/TP8_CarritoCompras-Ayala-Kaliszczak"
+	}
+]
+}
