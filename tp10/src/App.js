@@ -9,11 +9,13 @@ import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { favoritosContext, proyectosContext } from "./context/context";
 import { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   const [favoritos, setFavoritosContext] = useState([]);
-  const [proyectos, setProyectosContext] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [proyectos, setProyectosContext] = useState();
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
     if (localStorage.getItem("favoritosKey") === "undefined")
@@ -22,10 +24,27 @@ const App = () => {
     setFavoritosContext(favoritosJSON);
 
     axios.get("http://localhost:3000/DATA.json").then((res) => {
+      let proyectos = [];
+      res.data.proyectos.forEach(proyecto => {
+        let esFavorito = compararId(proyecto.id);
+        console.log("esFavorito", esFavorito);
+        proyectos.push({ proyecto, esFavorito });
+      })
+      console.log(proyectos)
       setProyectosContext(res.data.proyectos);
       setLoading(false);
     });
   }, []);
+
+  const compararId = (pId) => {
+    let r;
+    console.log("favoritos",favoritos)
+    favoritos.forEach((favorito) => {
+      console.log("r", r);
+      pId === favorito ? r = true : r = false;
+  })
+    return r;
+  }
 
   return loading ? <></> : (
     <favoritosContext.Provider value={{ favoritos, setFavoritosContext }}>

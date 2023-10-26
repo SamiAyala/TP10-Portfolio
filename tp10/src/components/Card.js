@@ -5,19 +5,22 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { useNavigate } from "react-router-dom";
+import './Card.css';
+import favPre from '../favPre.png';
+import favPost from '../favPost.png';
+
 
 const MyCard = (props) => {
-    const navigate = useNavigate();
-    let p = props.proyecto;
+  let p = props.proyecto;
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className='card' sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={p.imagenes}
         title="green iguana"
       />
-      <CardContent>
+      <CardContent className='cardContent'>
         <Typography gutterBottom variant="h5" component="div">
           {p.titulo}
         </Typography>
@@ -25,9 +28,10 @@ const MyCard = (props) => {
           {p.descripcion}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className='cardContent'>
         <Typography>{p.fecha}</Typography>
-        <Button size="small" onClick={() => window.location.replace(p.url)}>Learn More</Button>
+        <Button size="small" onClick={() => window.location.replace(p.url)}>Github</Button>
+        <img className='imgFav' alt='' src={favPre}></img>
       </CardActions>
     </Card>
   );

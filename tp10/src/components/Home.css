@@ -1,0 +1,77 @@
+
+
+.col{
+    margin: 1%;
+}
+.rainbow-text {
+    text-align: center;
+    font-size: 32px;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    animation: colorRotate 10s linear 0s infinite;
+    transition: text-shadow 0.1s;
+  }
+  
+  .rainbow-text:hover {
+    text-shadow: 0.04em 0.04em #fc0049,
+      0.08em 0.08em #fe8f01,
+      0.12em 0.12em #fdf21f,
+      0.16em 0.16em #3fdf4b,
+      0.2em 0.2em #3462fe,
+      0 0 5px #f40303,
+      0 0 25px #3703f4,
+      0 0 50px #1ff403,
+      0 0 100px #03e9f4;
+  }
+  
+  @keyframes colorRotate {
+  
+    100%,
+    0% {
+      color: gold;
+    }
+  
+    8% {
+      color: blue;
+    }
+  
+    16% {
+      color: gold;
+    }
+  
+    25% {
+      color: blue;
+    }
+  
+    33% {
+      color: gold;
+    }
+  
+    41% {
+      color: blue;
+    }
+  
+    50% {
+      color: gold;
+    }
+  
+    58% {
+      color: blue;
+    }
+  
+    66% {
+      color: gold;
+    }
+  
+    75% {
+      color: blue;
+    }
+  
+    83% {
+      color: gold;
+    }
+  
+    91% {
+      color: blue;
+    }
+  }

@@ -1,0 +1,13 @@
+.cardContent{
+    background-color: gold;
+}
+
+.card{
+    box-shadow: 1px 1px 10px 0px black !important;
+ }
+
+.imgFav{
+
+    height: 3vh;
+    float: right !important;
+}

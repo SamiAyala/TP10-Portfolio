@@ -1,24 +1,26 @@
-import React, { useContext, useEffect, useState } from "react";
-import axios from 'axios';
+import React, { useContext} from "react";
 import {proyectosContext,favoritosContext} from '../context/context';
 import MyCard from "./Card";
-import {Row , Col } from 'react-bootstrap'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './Home.css';
 
 const Home = () => {
     const proyectosC = useContext(proyectosContext);
     const favoritosC = useContext(favoritosContext);
 
-
 return(
-    <Row>
-    <Col><MyCard proyecto={proyectosC.proyectos[0]}/></Col>
-    <Col><MyCard proyecto={proyectosC.proyectos[9]}/></Col>
-    <Col><MyCard proyecto={proyectosC.proyectos[1]}/></Col>
-    <Col><MyCard proyecto={proyectosC.proyectos[2]}/></Col>
-    <Col><MyCard proyecto={proyectosC.proyectos[3]}/></Col>
-    <Col><MyCard proyecto={proyectosC.proyectos[4]}/></Col>
-    
+    <>
+    <Row><Col style={{display:'flex',flexWrap:'wrap',justifyContent:'center',fontSize:'xx-large',fontWeight:'bold',padding:'0px',alignItems:'center'}}><p style={{color:'white'}}>Bienvenido a mi </p><p className="rainbow-text">¡portfolio!</p><p style={{fontSize:'10px'}}>(hover me)</p></Col></Row>
+    <Row md={4} style={{display:'flex',flexWrap:'wrap',justifyContent:'center',padding:'0px',alignItems:'center'}}>
+    <Col className="col"><MyCard proyecto={proyectosC.proyectos[0]}/></Col>
+    <Col className="col"><MyCard proyecto={proyectosC.proyectos[9]}/></Col>
+    <Col className="col"><MyCard proyecto={proyectosC.proyectos[1]}/></Col>
+    <Col className="col"><MyCard proyecto={proyectosC.proyectos[2]}/></Col>
+    <Col className="col"><MyCard proyecto={proyectosC.proyectos[3]}/></Col>
+    <Col className="col"><MyCard proyecto={proyectosC.proyectos[4]}/></Col>
     </Row>
+    </>
 )
 }
 
