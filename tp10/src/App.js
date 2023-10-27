@@ -22,30 +22,29 @@ const App = () => {
       localStorage.setItem("favoritosKey", JSON.stringify());
     const favoritosJSON = JSON.parse(localStorage.getItem("favoritosKey"));
     setFavoritosContext(favoritosJSON);
-
     axios.get("http://localhost:3000/DATA.json").then((res) => {
       let proyectos = [];
       res.data.proyectos.forEach(proyecto => {
-        let esFavorito = compararId(proyecto.id);
+        let esFavorito = false //compararId(proyecto.id);
         console.log("esFavorito", esFavorito);
         proyectos.push({ proyecto, esFavorito });
       })
       console.log(proyectos)
-      setProyectosContext(res.data.proyectos);
+      console.log(res.data.proyectos)
+      setProyectosContext(proyectos);
       setLoading(false);
     });
   }, []);
 
-  const compararId = (pId) => {
-    let r;
-    console.log("favoritos",favoritos)
+  /*const compararId = (pId) => {
+    let r = false;
     favoritos.forEach((favorito) => {
       console.log("r", r);
       pId === favorito ? r = true : r = false;
   })
     return r;
   }
-
+*/
   return loading ? <></> : (
     <favoritosContext.Provider value={{ favoritos, setFavoritosContext }}>
       <proyectosContext.Provider value={{ proyectos, setProyectosContext }}>

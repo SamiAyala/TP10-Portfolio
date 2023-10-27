@@ -11,8 +11,9 @@ import favPost from '../favPost.png';
 
 
 const MyCard = (props) => {
-  let p = props.proyecto;
-
+  console.log("props",props)
+  let p = props.proyecto.proyecto;
+  console.log("Estos son los proyectos",props.proyecto)
   return (
     <Card className='card' sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -31,7 +32,7 @@ const MyCard = (props) => {
       <CardActions className='cardContent'>
         <Typography>{p.fecha}</Typography>
         <Button size="small" onClick={() => window.location.replace(p.url)}>Github</Button>
-        <img className='imgFav' alt='' src={favPre}></img>
+        <img className='imgFav' alt='' src={favPre} onClick={()=> props.AgregarYEliminarfavoritos(p.id)}></img>
       </CardActions>
     </Card>
   );
