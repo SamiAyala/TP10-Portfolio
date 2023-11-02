@@ -1,22 +1,39 @@
 import "./Layout.css";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import Footer from './Footer';
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+import { useContext } from "react";
+import { favoritosContext } from "../context/context";
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -12,
+    top: 10,
+  },
+}));
 
 const Layout = () => {
+  const favoritosC = useContext(favoritosContext);
   return (
     <>
       <nav className="navbar">
         <div className="container">
-        <div className="nav-elements">
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/misCreaciones">Mis Creaciones</NavLink>
-            </li>
-          </ul>
-        </div>
+          <div className="nav-elements">
+            <ul>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/misCreaciones">Mis Creaciones</NavLink>
+              </li>
+              <li>
+                <StyledBadge badgeContent={favoritosC.favoritos.length} color="primary">
+                  <NavLink to="/favoritos">Favoritos</NavLink>
+                </StyledBadge>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
       <Outlet />

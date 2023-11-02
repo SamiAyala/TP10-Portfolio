@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,12 +7,39 @@ import Button from '@mui/material/Button';
 import './Card.css';
 import favPre from '../favPre.png';
 import favPost from '../favPost.png';
+import { favoritosContext, proyectosContext } from '../context/context';
+import { useContext, useEffect } from 'react';
 
 
 const MyCard = (props) => {
-  console.log("props",props)
   let p = props.proyecto.proyecto;
-  console.log("Estos son los proyectos",props.proyecto)
+  const proyectosC = useContext(proyectosContext);
+  const favoritosC = useContext(favoritosContext);
+
+  useEffect(() => {
+    localStorage.setItem("favoritosKey", JSON.stringify(favoritosC.favoritos));
+  }, [proyectosC])
+
+  const AgregarYEliminarfavoritos = (id) => {
+    console.log("id", id);
+    let auxFav = favoritosC;
+    for (let i = 0; i < proyectosC.proyectos.length; i++) {
+      let aux = proyectosC.proyectos[i];
+      if (proyectosC.proyectos[i].proyecto.id === id) {
+        if (aux.esFavorito) {
+          aux.esFavorito = false;
+          favoritosC.setFavoritosContext(current => current.filter(favorito => {
+            return favorito.id !== id;
+          }))
+        } else {
+          aux.esFavorito = true;
+          favoritosC.setFavoritosContext([...auxFav.favoritos, { 'id': id }]);
+        }
+        console.log("favoritosC.favoritos", favoritosC.favoritos);
+      }
+    }
+  }
+
   return (
     <Card className='card' sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -32,7 +58,7 @@ const MyCard = (props) => {
       <CardActions className='cardContent'>
         <Typography>{p.fecha}</Typography>
         <Button size="small" onClick={() => window.location.replace(p.url)}>Github</Button>
-        <img className='imgFav' alt='' src={favPre} onClick={()=> props.AgregarYEliminarfavoritos(p.id)}></img>
+        <img className='imgFav' alt='' src={props.proyecto.esFavorito ? favPost : favPre} onClick={() => AgregarYEliminarfavoritos(p.id)}></img>
       </CardActions>
     </Card>
   );

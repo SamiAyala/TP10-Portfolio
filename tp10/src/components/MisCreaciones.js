@@ -10,7 +10,7 @@ const MisCreaciones = () => {
     const favoritosC = useContext(favoritosContext);
 
     return (
-        <Row md={4} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '0px', alignItems: 'center',marginBottom:'5%' }}>
+        <Row md='auto' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '0px', alignItems: 'center',marginBottom:'5%', marginTop:'4%' }}>
             {proyectosC.proyectos.map(proyecto => 
                 <Col className="col" key={proyecto.title}><MyCard proyecto={proyecto}></MyCard></Col>
             )}
