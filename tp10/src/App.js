@@ -18,27 +18,33 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
-    if (localStorage.getItem("favoritosKey") === "undefined") localStorage.setItem("favoritosKey", JSON.stringify(null));
+    setFavoritosContext([]);
+    if (localStorage.getItem("favoritosKey") === "undefined") localStorage.setItem("favoritosKey", JSON.stringify([]));
+    //Resetear localStorage:
+    //localStorage.setItem("favoritosKey", JSON.stringify(undefined));
     const favoritosJSON = JSON.parse(localStorage.getItem("favoritosKey"));
-    favoritosJSON === null ? setFavoritosContext([]) : setFavoritosContext(favoritosJSON);
+    if (favoritosJSON === undefined && favoritosJSON === null) {
+      setFavoritosContext([]);
+    }else{
+      setFavoritosContext(favoritosJSON);
+    }
     axios.get("http://localhost:3000/DATA.json").then((res) => {
       let proyectos = [];
       res.data.proyectos.forEach(proyecto => {
         let b = false;
-        favoritos !== null ? b = compararId(proyecto.id,favoritosJSON) : <></>
+        b = compararId(proyecto.id, favoritosJSON)
         let esFavorito = b;
         proyectos.push({ proyecto, esFavorito });
       })
-      console.log(proyectos)
       setProyectosContext(proyectos);
       setLoading(false);
     });
   }, []);
 
-  const compararId = (id,favoritos) => {
+  const compararId =  (id, favoritos) => {
     let r = false;
     favoritos.forEach((n) => {
-      n.id===id ? r=true : <></>
+      n.id === id ? r = true : <></>
     });
     return r;
   }

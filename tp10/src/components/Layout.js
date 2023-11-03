@@ -8,8 +8,9 @@ import { favoritosContext } from "../context/context";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
-    right: -12,
-    top: 10,
+    right: -14,
+    top: 8,
+    paddingRight:8,
   },
 }));
 
@@ -25,7 +26,7 @@ const Layout = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/misCreaciones">Mis Creaciones</NavLink>
+                <NavLink to="/misCreaciones">Mis proyectos</NavLink>
               </li>
               <li>
                 <StyledBadge badgeContent={favoritosC.favoritos.length} color="primary">

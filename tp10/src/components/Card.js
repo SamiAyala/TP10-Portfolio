@@ -21,7 +21,6 @@ const MyCard = (props) => {
   }, [proyectosC])
 
   const AgregarYEliminarfavoritos = (id) => {
-    console.log("id", id);
     let auxFav = favoritosC;
     for (let i = 0; i < proyectosC.proyectos.length; i++) {
       let aux = proyectosC.proyectos[i];
@@ -35,13 +34,12 @@ const MyCard = (props) => {
           aux.esFavorito = true;
           favoritosC.setFavoritosContext([...auxFav.favoritos, { 'id': id }]);
         }
-        console.log("favoritosC.favoritos", favoritosC.favoritos);
       }
     }
   }
 
   return (
-    <Card className='card' sx={{ maxWidth: 345 }}>
+    <Card key={p.id} className='card' sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
         image={p.imagenes}
