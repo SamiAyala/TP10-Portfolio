@@ -3,3 +3,7 @@
     border-radius: 15px 50px;
     box-shadow: 1px 1px 10px 0px black !important;
 }
+
+#body{
+    overflow-x: hidden !important;
+  }

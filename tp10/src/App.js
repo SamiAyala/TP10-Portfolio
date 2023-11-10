@@ -19,11 +19,14 @@ const App = () => {
   useEffect(() => {
     setLoading(true);
     setFavoritosContext([]);
-    if (localStorage.getItem("favoritosKey") === "undefined") localStorage.setItem("favoritosKey", JSON.stringify([]));
+    if (localStorage.getItem("favoritosKey") === null) {
+      localStorage.setItem("favoritosKey", JSON.stringify([]));
+    }
     //Resetear localStorage:
-    //localStorage.setItem("favoritosKey", JSON.stringify(undefined));
+    //localStorage.clear();
     const favoritosJSON = JSON.parse(localStorage.getItem("favoritosKey"));
-    if (favoritosJSON === undefined && favoritosJSON === null) {
+    console.log("favoritosJSON",favoritosJSON);
+    if (favoritosJSON === undefined || favoritosJSON === null) {
       setFavoritosContext([]);
     }else{
       setFavoritosContext(favoritosJSON);
@@ -32,7 +35,7 @@ const App = () => {
       let proyectos = [];
       res.data.proyectos.forEach(proyecto => {
         let b = false;
-        b = compararId(proyecto.id, favoritosJSON)
+        b = compararId(proyecto.id, favoritosJSON);
         let esFavorito = b;
         proyectos.push({ proyecto, esFavorito });
       })

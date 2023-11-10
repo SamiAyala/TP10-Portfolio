@@ -12,7 +12,7 @@ const Home = () => {
     console.log("FAVORITOS HOME", favoritosC)
 
     return (
-        <>
+        <div id="body">
             <Row><Col style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', fontSize: 'xx-large', fontWeight: 'bold', padding: '0px', alignItems: 'center' }}><p style={{ color: 'white' }}>Bienvenido a mi </p><p className="rainbow-text">¡portfolio!</p><p style={{ fontSize: '10px' }}>(hover me)</p></Col></Row>
             <Row md='auto' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '0px', alignItems: 'center' }}>
                 <Col className="col"><MyCard proyecto={proyectosC.proyectos[0]} /></Col>
@@ -22,7 +22,7 @@ const Home = () => {
                 <Col className="col"><MyCard proyecto={proyectosC.proyectos[3]} /></Col>
                 <Col className="col"><MyCard proyecto={proyectosC.proyectos[4]} /></Col>
             </Row>
-        </>
+        </div>
     )
 }
 

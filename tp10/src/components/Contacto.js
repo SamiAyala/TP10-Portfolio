@@ -42,7 +42,7 @@ const Contacto = () => {
     });
 
     return (
-        <>
+        <div id="body">
             <Row><Col style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', fontSize: 'xx-large', fontWeight: 'bold', padding: '0px', alignItems: 'center' }}><p style={{ color: 'white' }}>Ponte en contacto</p></Col></Row>
             <Row style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center',justifyContent: 'center'}}><Col id='col' sm='auto' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', fontSize: 'xx-large', fontWeight: 'bold', padding: '20px', alignItems: 'center'}}>
                 <form onSubmit={formik.handleSubmit}>
@@ -98,7 +98,7 @@ const Contacto = () => {
                 </form>
             </Col>
             </Row>
-        </>
+        </div>
     );
 };
 

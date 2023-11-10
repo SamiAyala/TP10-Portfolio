@@ -41,7 +41,7 @@ const MyCard = (props) => {
   return (
     <Card key={p.id} className='card' sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 140 , maxHeight: 140, width: 'auto' }}
         image={p.imagenes}
         title="green iguana"
       />
